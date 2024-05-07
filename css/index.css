@@ -1,1 +1,23 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    }
+								  
+.b {
+    margin: 0;
+    height: 40vh;
+	width: 22vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	: center;
+    height: 100%;
+    }
+
 
