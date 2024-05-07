@@ -1,23 +1,58 @@
+@font-face {
+     font-family: titulo;
+     src: url(fonts/Paladex.ttf) format('truetype');
+     }
+	 
+ *{
+    font-family: titulo;
+	}
+	 
 body, html {
     height: 100%;
     margin: 0;
     }
-								  
-.b {
-    margin: 0;
-    height: 40vh;
-	width: 22vh;
+			
+.b,
+.b2,
+.b3 {
+	transition: transform 0.9s;
+	box-shadow: 0 0 10px 5px darkblue;
+	opacity: 0.3;
+	border-radius: 35px;
+    margin: 0 35px;
+    height: 45vh;
+	width: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    }
+
+.b:hover,
+.b2:hover,
+.b3:hover {
+    transform: scale(1.2); /* Aumenta o tamanho dos botões em 10% ao passar o mouse por cima */
    }
    
-.container {
+.b:not(:hover),
+.b2:not(:hover),
+.b3:not(:hover) {
+    filter: brightness(0.3); /* Escurece os botões não selecionados */
+    }
+
+.c1 {
+	margin: 0 35px;
     display: flex;
     justify-content: center;
-    align-items: center;
-	: center;
+    align-items: center; : center;
     height: 100%;
     }
 
-
+.texto{
+	 margin-top: center;
+	 color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     height: 90vh;
+     }
