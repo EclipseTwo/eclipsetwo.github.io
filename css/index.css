@@ -1,59 +1,95 @@
-@font-face {
-     font-family: titulo;
-     src: url(fonts/Paladex.ttf) format('truetype');
-     }
-	 
- *{
-    font-family: titulo;
-	}
-	 
+/* Reset CSS */
 body, html {
     height: 100%;
     margin: 0;
-    }
-			
+}
+
+/* Estilos para os botões */
 .b,
 .b2,
 .b3 {
-	width: calc(100% - 20px);
-	transition: transform 0.9s;
-	box-shadow: 0 0 10px 5px darkblue;
-	opacity: 0.3;
-	border-radius: 35px;
+    transition: 0.5s;
+    position: relative;
+    width: calc(100% - 20px);
+    opacity: 0.5;
+    border-radius: 35px;
     margin: 0 35px;
     height: 45vh;
-	width: 30vh;
+    width: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+}
 
+.b {
+    box-shadow: 0 0 10px 5px rgb(3, 231, 22);
+}
+
+.b2 {
+    box-shadow: 0 0 10px 5px rgb(0, 210, 238);
+}
+
+.b3 {
+    box-shadow: 0 0 10px 5px rgb(255, 0, 0);
+}
+
+/* Estilos para os botões quando o mouse passa por cima */
 .b:hover,
 .b2:hover,
 .b3:hover {
+    box-shadow: 0 0 20px 10px;
     transform: scale(1.2); /* Aumenta o tamanho dos botões em 10% ao passar o mouse por cima */
-   }
-   
+}
+
+/* Estilos para os botões quando não estão sendo selecionados */
 .b:not(:hover),
 .b2:not(:hover),
 .b3:not(:hover) {
     filter: brightness(0.3); /* Escurece os botões não selecionados */
-    }
+}
 
+/* Estilos para o container 'c1' */
 .c1 {
-	margin: 0 35px;
+    margin: 0 35px;
     display: flex;
     justify-content: center;
-    align-items: center; : center;
+    align-items: center;
     height: 100%;
-    }
+}
 
-.texto{
-	 margin-top: center;
-	 color: white;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     height: 90vh;
-     }
+.b::after,
+.b2::after,
+.b3::after {
+    content: ''; /* Adiciona um conteúdo vazio ao pseudo-elemento */
+    position: absolute; /* Torna a posição absoluta para posicionamento personalizado */
+    top: 50%; /* Inicialmente posicionado no meio vertical do botão */
+    left: 50%; /* Inicialmente posicionado no meio horizontal do botão */
+    transform: translate(-50%, -50%); /* Centraliza o pseudo-elemento */
+    width: 0; /* Define a largura inicial do pseudo-elemento como 0 */
+    height: 0; /* Define a altura inicial do pseudo-elemento como 0 */
+    border-radius: 35px; /* Mantém o mesmo raio de borda do botão */
+    opacity: 0; /* Inicialmente, o brilho é invisível */
+    transition: width 0.3s, height 0.3s; /* Adiciona uma transição suave para a largura e altura */
+    pointer-events: none; /* Garante que o pseudo-elemento não seja clicável */
+    z-index: -1; /* Define uma camada inferior para o pseudo-elemento para que fique atrás do botão */
+}
+
+.b::after {
+    background-color: rgb(67, 214, 22); /* Define a cor do brilho */
+}
+
+.b2::after {
+    background-color: rgb(24, 194, 206); /* Define a cor do brilho */
+}
+
+.b3::after {
+    background-color: rgb(214, 14, 14); /* Define a cor do brilho */
+}
+
+.b:hover::after,
+.b2:hover::after,
+.b3:hover::after {
+    width: 100%; /* Ajusta a largura do brilho para 100% do botão */
+    height: 100%; /* Ajusta a altura do brilho para 100% do botão */
+    opacity: 0.5; /* Ajusta a opacidade para tornar o brilho visível */
+}
